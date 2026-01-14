@@ -11,6 +11,8 @@ import { formatCurrency } from './utils';
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
+
+
 export async function fetchRevenue() {
   try {
     // Artificially delay a response for demo purposes.
@@ -215,4 +217,9 @@ export async function fetchFilteredCustomers(query: string) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch customer table.');
   }
+}
+
+export async function debugInvoices() {
+  const data = await sql`SELECT * FROM invoices ORDER BY date DESC`;
+  console.log(data);
 }
