@@ -21,7 +21,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
     // Implement search logic here
     console.log('Searching for:', term);
-  },10000);
+  },3000);
 
   return (
     <div className="relative flex flex-1 flex-shrink-0">
