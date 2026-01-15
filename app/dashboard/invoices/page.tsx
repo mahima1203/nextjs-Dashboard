@@ -8,6 +8,7 @@ import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
 
 
+
 export const dynamic = 'force-dynamic';
  
 export default async function Page(props: {
@@ -16,6 +17,7 @@ export default async function Page(props: {
     page?: string;
   }>;
 }) {
+
   const searchParams = await props.searchParams;
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;

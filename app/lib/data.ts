@@ -9,7 +9,8 @@ import {
 } from './definitions';
 import { formatCurrency } from './utils';
 
-const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
+const sql = postgres(process.env.DATABASE_URL!);
+
 
 
 
@@ -219,7 +220,5 @@ export async function fetchFilteredCustomers(query: string) {
   }
 }
 
-export async function debugInvoices() {
-  const data = await sql`SELECT * FROM invoices ORDER BY date DESC`;
-  console.log(data);
-}
+
+
